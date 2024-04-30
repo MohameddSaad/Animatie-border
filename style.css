@@ -1,0 +1,67 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI';
+}
+body
+{
+    background-color: #555;
+
+}
+header
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frame h1
+{
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 15px 20px 10px #85DEF2 ,  -15px -20px 10px #F222A9;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    word-spacing: 25px;
+    z-index: 2;
+}
+/* ------------------------------main css------------------------------ */
+.frame
+{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 600px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.frame::before
+{
+    content: ' ';
+    width: 300px;
+    height: 195%;
+/* (width and height) differ according to the dimensions of the parents */
+    background: linear-gradient( #85DEF2 , #F222A9);
+    position: absolute;
+    animation: rotate-border 6s linear infinite;
+}
+@keyframes rotate-border
+{
+    to{
+        transform: rotate(360deg);
+    }
+}
+.frame::after
+{
+    content: ' ';
+    position: absolute;
+    background-color: #555;
+    inset: 5px;
+    border-radius: 10px;
+}
+/* -------------------------------------------------------------------- */
